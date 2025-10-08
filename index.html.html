@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parklands Properties | Luxury Real Estate in Nairobi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a5276;
+            --secondary: #d4af37;
+            --accent: #2e86c1;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--secondary);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Header Styles */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--secondary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* Page Content */
+        .page-content {
+            padding-top: 100px;
+            min-height: calc(100vh - 300px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 82, 118, 0.8), rgba(26, 82, 118, 0.8)), url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #f0f0f0;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat p {
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        /* Properties Section */
+        .properties {
+            background: var(--light);
+        }
+
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .property-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .property-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .property-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .property-content {
+            padding: 20px;
+        }
+
+        .property-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .property-location {
+            color: var(--gray);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .property-location i {
+            margin-right: 5px;
+            color: var(--secondary);
+        }
+
+        .property-features {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature i {
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+
+        /* Testimonials Section */
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--light);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-detail i {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(rgba(26, 82, 118, 0.8), rgba(26, 82, 118, 0.8)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0 100px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            text-align: center;
+            background: #fff;
+            border-radius: 8px;
+            padding: 30px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .team-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Property Detail */
+        .property-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .property-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-main {
+            grid-column: span 2;
+            height: 300px;
+        }
+
+        .property-info {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .info-item i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Service Detail */
+        .service-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .service-img {
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+        }
+
+        .service-content {
+            padding: 20px 0;
+        }
+
+        .service-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .service-content li {
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+            bottom: -8px;
+            left: 0;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* Page Navigation */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container,
+            .property-detail,
+            .service-detail {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-main {
+                height: 250px;
+            }
+
+            .gallery-img {
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: #fff;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: left 0.3s;
+            }
+
+            nav ul.active {
+                left: 0;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .property-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-main {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stats {
+                flex-direction: column;
+            }
+
+            .stat {
+                margin-bottom: 20px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo" data-page="home">Parklands<span>Properties</span></a>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="about">About</a></li>
+                    <li><a href="#" class="nav-link" data-page="services">Services</a></li>
+                    <li><a href="#" class="nav-link" data-page="properties">Properties</a></li>
+                    <li><a href="#" class="nav-link" data-page="testimonials">Testimonials</a></li>
+                    <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home-page" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Find Your Dream Home in Parklands</h1>
+                    <p>Discover luxury properties in Nairobi's most prestigious neighborhood. Experience refined living with exceptional amenities and breathtaking views.</p>
+                    <a href="#" class="btn" data-page="properties">View Properties</a>
+                    <a href="#" class="btn btn-outline" data-page="contact">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Who We Are</h2>
+                </div>
+                <div class="about-content">
+                    <div>
+                        <h3>Your Trusted Real Estate Partner in Parklands</h3>
+                        <p>With over a decade of experience in the Parklands real estate market, we specialize in connecting discerning clients with luxury properties that match their lifestyle aspirations. Our deep understanding of the local market ensures you find not just a house, but a home that reflects your dreams.</p>
+                        <p>We offer comprehensive services including property buying, selling, and management, tailored to meet your unique needs.</p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <h3>80+</h3>
+                                <p>Properties</p>
+                            </div>
+                            <div class="stat">
+                                <h3>50+</h3>
+                                <p>Happy Clients</p>
+                            </div>
+                            <div class="stat">
+                                <h3>10+</h3>
+                                <p>Years Experience</p>
+                            </div>
+                        </div>
+                        <a href="#" class="btn" data-page="about">Learn More</a>
+                    </div>
+                    <div>
+                        <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80'); border-radius: 8px;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Services</h2>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Property Buying</h3>
+                        <p>We help you find the perfect property that matches your preferences, budget, and lifestyle requirements.</p>
+                        <a href="#" class="btn btn-outline" data-page="services" style="margin-top: 15px;">Learn More</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>Property Selling</h3>
+                        <p>Maximize your property's value with our strategic marketing and negotiation expertise.</p>
+                        <a href="#" class="btn btn-outline" data-page="services" style="margin-top: 15px;">Learn More</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3>Property Management</h3>
+                        <p>Comprehensive management services to maintain and enhance your property's value.</p>
+                        <a href="#" class="btn btn-outline" data-page="services" style="margin-top: 15px;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Properties Section -->
+        <section class="properties">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Featured Properties</h2>
+                </div>
+                <div class="properties-grid">
+                    <div class="property-card">
+                        <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="property-content">
+                            <h3>Luxury Villa</h3>
+                            <div class="property-price">KSh 45,000,000</div>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i> Parklands, Nairobi
+                            </div>
+                            <p>Spacious 5-bedroom villa with modern amenities, swimming pool, and panoramic city views.</p>
+                            <div class="property-features">
+                                <div class="feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>5 Beds</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-bath"></i>
+                                    <span>4 Baths</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-vector-square"></i>
+                                    <span>4500 sqft</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn" data-page="properties" style="width: 100%; margin-top: 15px;">View Details</a>
+                        </div>
+                    </div>
+                    <div class="property-card">
+                        <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="property-content">
+                            <h3>Modern Apartment</h3>
+                            <div class="property-price">KSh 22,000,000</div>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i> Parklands, Nairobi
+                            </div>
+                            <p>Contemporary 3-bedroom apartment with premium finishes and access to exclusive amenities.</p>
+                            <div class="property-features">
+                                <div class="feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>3 Beds</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-bath"></i>
+                                    <span>2 Baths</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-vector-square"></i>
+                                    <span>1800 sqft</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn" data-page="properties" style="width: 100%; margin-top: 15px;">View Details</a>
+                        </div>
+                    </div>
+                    <div class="property-card">
+                        <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="property-content">
+                            <h3>Executive Townhouse</h3>
+                            <div class="property-price">KSh 35,000,000</div>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i> Parklands, Nairobi
+                            </div>
+                            <p>Elegant 4-bedroom townhouse with private garden, modern kitchen, and secure parking.</p>
+                            <div class="property-features">
+                                <div class="feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>4 Beds</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-bath"></i>
+                                    <span>3 Baths</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-vector-square"></i>
+                                    <span>2800 sqft</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn" data-page="properties" style="width: 100%; margin-top: 15px;">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#" class="btn" data-page="properties">View All Properties</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <h2>What Our Clients Say</h2>
+                </div>
+                <div class="testimonials-container">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"Parklands Properties helped us find our dream home in the perfect location. Their attention to detail and understanding of our needs made the entire process smooth and enjoyable."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img" style="background-image: url('https://randomuser.me/api/portraits/women/65.jpg');"></div>
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <p>Homeowner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"As an investor, I appreciate their market knowledge and professionalism. They've helped me acquire multiple properties in Parklands that have shown excellent returns."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img" style="background-image: url('https://randomuser.me/api/portraits/men/75.jpg');"></div>
+                            <div>
+                                <h4>David Kimani</h4>
+                                <p>Property Investor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#" class="btn" data-page="testimonials">Read More Testimonials</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="about-page" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <h1>About Parklands Properties</h1>
+                <p>Learn more about our company, our team, and our commitment to excellence in real estate.</p>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div>
+                        <h2>Our Story</h2>
+                        <p>Founded in 2010, Parklands Properties has grown to become one of Nairobi's most trusted real estate agencies. Our journey began with a simple mission: to help people find homes they love in the vibrant Parklands neighborhood.</p>
+                        <p>Over the years, we've expanded our services to include property management, real estate consulting, and investment advisory, always maintaining our commitment to personalized service and deep market knowledge.</p>
+                        <h3>Our Values</h3>
+                        <p>At Parklands Properties, we believe in integrity, professionalism, and putting our clients first. We understand that buying or selling a property is one of life's most significant decisions, and we're committed to making that process as smooth and successful as possible.</p>
+                    </div>
+                    <div>
+                        <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80'); border-radius: 8px;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Team</h2>
+                </div>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-img" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg');"></div>
+                        <h3>James Mwangi</h3>
+                        <p>Founder & CEO</p>
+                        <p>With over 15 years in real estate, James leads our team with vision and expertise.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-img" style="background-image: url('https://randomuser.me/api/portraits/women/44.jpg');"></div>
+                        <h3>Grace Wanjiku</h3>
+                        <p>Senior Property Consultant</p>
+                        <p>Grace specializes in luxury properties and has an exceptional track record in Parklands.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-img" style="background-image: url('https://randomuser.me/api/portraits/men/67.jpg');"></div>
+                        <h3>Robert Omondi</h3>
+                        <p>Property Management Director</p>
+                        <p>Robert oversees our property management portfolio, ensuring client satisfaction.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-img" style="background-image: url('https://randomuser.me/api/portraits/women/68.jpg');"></div>
+                        <h3>Susan Akinyi</h3>
+                        <p>Marketing Manager</p>
+                        <p>Susan develops innovative marketing strategies to showcase our premium properties.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Services Page -->
+    <div id="services-page" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Our Services</h1>
+                <p>Comprehensive real estate solutions tailored to your unique needs.</p>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container">
+                <div class="service-detail">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="service-content">
+                        <h2>Property Buying</h2>
+                        <p>Our property buying service is designed to make your home search efficient and successful. We understand that finding the right property involves more than just matching criteria - it's about finding a place that feels like home.</p>
+                        <h3>What We Offer:</h3>
+                        <ul>
+                            <li>Personalized property search based on your preferences</li>
+                            <li>Expert negotiation to secure the best price</li>
+                            <li>Thorough property inspections and due diligence</li>
+                            <li>Guidance through the entire purchasing process</li>
+                            <li>Connections with trusted lawyers and financiers</li>
+                        </ul>
+                        <a href="#" class="btn" data-page="contact">Start Your Search</a>
+                    </div>
+                </div>
+
+                <div class="service-detail">
+                    <div class="service-content">
+                        <h2>Property Selling</h2>
+                        <p>When it's time to sell your property, our comprehensive marketing strategy and negotiation expertise ensure you get the maximum value for your investment.</p>
+                        <h3>What We Offer:</h3>
+                        <ul>
+                            <li>Professional property valuation</li>
+                            <li>Strategic marketing across multiple channels</li>
+                            <li>High-quality photography and virtual tours</li>
+                            <li>Expert negotiation with potential buyers</li>
+                            <li>Smooth transaction management</li>
+                        </ul>
+                        <a href="#" class="btn" data-page="contact">Get a Valuation</a>
+                    </div>
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                </div>
+
+                <div class="service-detail">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="service-content">
+                        <h2>Property Management</h2>
+                        <p>Our property management services take the stress out of being a landlord. We handle everything from tenant screening to maintenance, ensuring your investment is well-protected and profitable.</p>
+                        <h3>What We Offer:</h3>
+                        <ul>
+                            <li>Tenant screening and placement</li>
+                            <li>Rent collection and financial reporting</li>
+                            <li>Regular property inspections</li>
+                            <li>Maintenance and repair coordination</li>
+                            <li>Legal compliance and documentation</li>
+                        </ul>
+                        <a href="#" class="btn" data-page="contact">Manage My Property</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Properties Page -->
+    <div id="properties-page" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Our Properties</h1>
+                <p>Discover exclusive properties in Nairobi's prestigious Parklands neighborhood.</p>
+            </div>
+        </section>
+
+        <section class="properties">
+            <div class="container">
+                <div class="property-detail">
+                    <div class="property-gallery">
+                        <div class="gallery-img gallery-main" style="background-image: url('https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                    </div>
+                    <div class="property-info">
+                        <h2>Luxury Villa in Parklands</h2>
+                        <div class="property-price">KSh 45,000,000</div>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i> Parklands, Nairobi
+                        </div>
+                        <p>This magnificent 5-bedroom villa offers luxury living at its finest. Featuring spacious interiors, high-end finishes, and panoramic city views, this property is perfect for those seeking elegance and comfort.</p>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <i class="fas fa-bed"></i>
+                                <span>5 Bedrooms</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-bath"></i>
+                                <span>4 Bathrooms</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-vector-square"></i>
+                                <span>4,500 sqft</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-car"></i>
+                                <span>2 Parking Spaces</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-swimming-pool"></i>
+                                <span>Swimming Pool</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-tree"></i>
+                                <span>Private Garden</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn" data-page="contact" style="width: 100%;">Schedule a Viewing</a>
+                    </div>
+                </div>
+
+                <div class="property-detail">
+                    <div class="property-info">
+                        <h2>Modern Apartment</h2>
+                        <div class="property-price">KSh 22,000,000</div>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i> Parklands, Nairobi
+                        </div>
+                        <p>This contemporary 3-bedroom apartment combines style and functionality. Located in a secure complex with premium amenities, it offers a low-maintenance lifestyle without compromising on luxury.</p>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <i class="fas fa-bed"></i>
+                                <span>3 Bedrooms</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-bath"></i>
+                                <span>2 Bathrooms</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-vector-square"></i>
+                                <span>1,800 sqft</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-car"></i>
+                                <span>1 Parking Space</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-dumbbell"></i>
+                                <span>Gym Access</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-swimmer"></i>
+                                <span>Pool Access</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn" data-page="contact" style="width: 100%;">Schedule a Viewing</a>
+                    </div>
+                    <div class="property-gallery">
+                        <div class="gallery-img gallery-main" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                    </div>
+                </div>
+
+                <div class="properties-grid">
+                    <div class="property-card">
+                        <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="property-content">
+                            <h3>Executive Townhouse</h3>
+                            <div class="property-price">KSh 35,000,000</div>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i> Parklands, Nairobi
+                            </div>
+                            <p>Elegant 4-bedroom townhouse with private garden, modern kitchen, and secure parking.</p>
+                            <div class="property-features">
+                                <div class="feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>4 Beds</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-bath"></i>
+                                    <span>3 Baths</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-vector-square"></i>
+                                    <span>2800 sqft</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn" data-page="contact" style="width: 100%; margin-top: 15px;">Inquire Now</a>
+                        </div>
+                    </div>
+                    <div class="property-card">
+                        <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="property-content">
+                            <h3>Garden Apartment</h3>
+                            <div class="property-price">KSh 18,500,000</div>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i> Parklands, Nairobi
+                            </div>
+                            <p>Spacious 2-bedroom garden apartment with private terrace and communal facilities.</p>
+                            <div class="property-features">
+                                <div class="feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>2 Beds</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-bath"></i>
+                                    <span>2 Baths</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-vector-square"></i>
+                                    <span>1200 sqft</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn" data-page="contact" style="width: 100%; margin-top: 15px;">Inquire Now</a>
+                        </div>
+                    </div>
+                    <div class="property-card">
+                        <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="property-content">
+                            <h3>Penthouse Suite</h3>
+                            <div class="property-price">KSh 65,000,000</div>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i> Parklands, Nairobi
+                            </div>
+                            <p>Luxurious penthouse with rooftop terrace, premium finishes, and stunning views.</p>
+                            <div class="property-features">
+                                <div class="feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>4 Beds</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-bath"></i>
+                                    <span>4 Baths</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-vector-square"></i>
+                                    <span>3800 sqft</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn" data-page="contact" style="width: 100%; margin-top: 15px;">Inquire Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Testimonials Page -->
+    <div id="testimonials-page" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Client Testimonials</h1>
+                <p>See what our clients have to say about their experience with Parklands Properties.</p>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <div class="testimonials-container">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"Parklands Properties helped us find our dream home in the perfect location. Their attention to detail and understanding of our needs made the entire process smooth and enjoyable. We couldn't be happier with our new home!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img" style="background-image: url('https://randomuser.me/api/portraits/women/65.jpg');"></div>
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <p>Homeowner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"As an investor, I appreciate their market knowledge and professionalism. They've helped me acquire multiple properties in Parklands that have shown excellent returns. Their advice on property valuation and market trends has been invaluable to my investment strategy."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img" style="background-image: url('https://randomuser.me/api/portraits/men/75.jpg');"></div>
+                            <div>
+                                <h4>David Kimani</h4>
+                                <p>Property Investor</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"I was relocating to Nairobi for work and needed to find a suitable property quickly. The team at Parklands Properties understood my tight timeline and found me the perfect apartment within a week. Their efficiency and professionalism were impressive."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img" style="background-image: url('https://randomuser.me/api/portraits/women/43.jpg');"></div>
+                            <div>
+                                <h4>Lisa Wangari</h4>
+                                <p>Corporate Client</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"Selling my family home was an emotional process, but the team at Parklands Properties handled it with sensitivity and expertise. They secured a great price and made the entire transaction smooth. I would highly recommend their services."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img" style="background-image: url('https://randomuser.me/api/portraits/men/81.jpg');"></div>
+                            <div>
+                                <h4>Michael Otieno</h4>
+                                <p>Home Seller</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact-page" class="page">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Get in touch with our team to discuss your real estate needs.</p>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="container">
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        <p>Ready to find your dream property in Parklands? Contact us today for a personalized consultation.</p>
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Our Office</h4>
+                                <p>Parklands Plaza, 3rd Floor, Parklands, Nairobi</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+254 700 123 456</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@parklandsproperties.co.ke</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9am - 6pm</p>
+                                <p>Saturday: 10am - 4pm</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form id="contactForm">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Your Email" required>
+                            <input type="tel" placeholder="Your Phone">
+                            <select style="width: 100%; padding: 12px 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;">
+                                <option value="">I'm interested in...</option>
+                                <option value="buying">Buying a Property</option>
+                                <option value="selling">Selling a Property</option>
+                                <option value="management">Property Management</option>
+                                <option value="other">Other Inquiry</option>
+                            </select>
+                            <textarea placeholder="Your Message" required></textarea>
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="section-title">
+                    <h2>Visit Our Office</h2>
+                </div>
+                <div style="height: 400px; background: #eee; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <p style="font-size: 1.2rem; color: var(--gray);">Map would be embedded here</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Parklands Properties</h4>
+                    <p>Your premier real estate partner in Nairobi's prestigious Parklands neighborhood.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#" data-page="home">Home</a></li>
+                        <li><a href="#" data-page="about">About Us</a></li>
+                        <li><a href="#" data-page="services">Services</a></li>
+                        <li><a href="#" data-page="properties">Properties</a></li>
+                        <li><a href="#" data-page="testimonials">Testimonials</a></li>
+                        <li><a href="#" data-page="contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#" data-page="services">Property Buying</a></li>
+                        <li><a href="#" data-page="services">Property Selling</a></li>
+                        <li><a href="#" data-page="services">Property Management</a></li>
+                        <li><a href="#" data-page="services">Real Estate Consulting</a></li>
+                        <li><a href="#" data-page="services">Property Valuation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to our newsletter for the latest property listings and market insights.</p>
+                    <form>
+                        <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 4px; border: none;">
+                        <button type="submit" class="btn" style="width: 100%;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Parklands Properties. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Page Navigation System
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all page elements and navigation links
+            const pages = document.querySelectorAll('.page');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pageLinks = document.querySelectorAll('[data-page]');
+            
+            // Function to show a specific page
+            function showPage(pageId) {
+                // Hide all pages
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Show the selected page
+                const activePage = document.getElementById(`${pageId}-page`);
+                if (activePage) {
+                    activePage.classList.add('active');
+                }
+                
+                // Update active navigation link
+                navLinks.forEach(link => {
+                    if (link.getAttribute('data-page') === pageId) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+                
+                // Scroll to top when changing pages
+                window.scrollTo(0, 0);
+            }
+            
+            // Add click event to all navigation links
+            pageLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    showPage(pageId);
+                });
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('nav ul');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
+            
+            // Form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message! We will get back to you soon.');
+                    this.reset();
+                });
+            }
+            
+            // Set home as default page
+            showPage('home');
+        });
+    </script>
+</body>
+</html>
